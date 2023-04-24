@@ -9,7 +9,7 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	quick_sort_helper(array, size - 1, size);
+	quick_sort_helper(array, 0, size - 1, size);
 }
 /**
  * partition - partitions the array
@@ -41,7 +41,7 @@ int partition(int *array, int low, int high, size_t size)
 	}
 	if (array[i + 1] != array[high])
 	{
-		aux = array[i + 1];
+		tmp = array[i + 1];
 		array[i + 1] = array[high];
 		array[high] = tmp;
 		print_array(array, size);
